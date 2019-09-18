@@ -6,11 +6,11 @@ This is barebones can messages between to stm32l432's to trigger blinking lights
 ```sh
 $ pip install mbed-cli 
 ```
-3. In repo run 
+3. To get the mbed libraries run this command in the root folder
 ```sh
-$ mbed new .
+$ mbed deploy
 ```
-3. Install the required packages if you dont have them  (recommend to use a virtualenv)
+3. Install the required packages if you dont have them  (recommend to use a virtualenv), requirements.txt is located in \mbed-os
 ```sh
 $ pip install -r requirements.txt
 ```
