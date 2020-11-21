@@ -1,3 +1,5 @@
+# UBC Supermileage MBED projects
+[Getting Started](#Getting-started)
 ## Getting started:
 ### Install Prerequisites
 ##### Windows / MacOSX
