@@ -1,21 +1,70 @@
-This is barebones can messages between to stm32l432's to trigger blinking lights
+## Getting started:
+### Install Prerequisites
+##### Windows / MacOSX
+1. Python 3.7 [(Windows)](https://www.python.org/downloads/windows/) [(MaxOSX)](https://www.python.org/downloads/mac-osx/)
+2. Git [(Windows/MacOSX)](https://git-scm.com/downloads)
+3. Mercurial [(Windows/MacOSX)](https://www.mercurial-scm.org/downloads)
+##### Linux
+Install Python, Git, and Mercurial with
+```sh
+$ sudo apt update
+$ sudo apt install python3.7 git mercurial -y
+```
+##### All
+[Install the GNU ARM Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) (version 6-2017-q2-update)
+### Virtual Environment Setup
+We setup a virtual environment in order to easily access mbed-os and its dependencies without installing any packages globally. Anytime you require mbed-cli, activate the virtual environment before starting to work/
+##### Linux / MacOSX
+Clone and enter the repository:
+```sh
+$ git clone https://github.com/spennyp/mbedStm32.git
+$ cd git
+```
+Create and activate virtual environment:
+```sh
+$ python3.7 -m venv mbed-os-env
+$ source mbed-os-env/bin/activate
+```
+Anytime you need to activate the virtual environment, run the second line from inside the root directory of the cloned repository.
 
-### Getting started:
-1. Install Python if you dont have it
-2. Intall mbed-cli if you don't have it
+After activating your virtual envrionment, your terminal should look something like this:
 ```sh
-$ pip install mbed-cli 
+(mbed-os-env) $
 ```
-3. To get the mbed libraries run this command in the root folder
+##### Windows
+Clone and enter the repository:
+```cmd
+git clone https://github.com/spennyp/mbedStm32.git
+cd git
+```
+Create and activate virtual environment:
+```cmd
+py -3.7 -m venv mbed-os-env
+mbed-os-env\Scripts\activate.bat
+```
+Anytime you need to activate the virtual environment, run the second line from inside the root directory of the cloned repository.
+
+After activating your virtual envrionment, your terminal should look something like this (with a different path):
+```cmd
+(mbed-os-env) c:\Users\supermileage\Documents\mbed-os>
+```
+### Installing and deploying Mbed CLI
+*Make sure your virtual environment is activated before continuing!*
+
+Install Mbed CLI:
 ```sh
-$ mbed deploy
+python -m pip install mbed-cli 
 ```
-3. Install the required packages if you dont have them  (recommend to use a virtualenv), requirements.txt is located in \mbed-os
+Get mbed libraries by deploying mbed in the root directory of the repository:
 ```sh
-$ pip install -r requirements.txt
+mbed deploy
 ```
-7. Build
+Install the required packages if you dont have them
 ```sh
-$ mbed compile
+python -m pip install -r mbed-os/requirements.txt
 ```
-8. drag .bin file into the microcontroller(⁨..\mbedStm32⁩\BUILD⁩\NUCLEO_L432KC⁩\GCC_ARM\mbedStm32.bin)
+### Compiling Code
+```sh
+$ mbed compile --source ./mbed-os --source ./[project directory]
+```
+drag .bin file into the microcontroller(⁨..\mbedStm32⁩\BUILD⁩\NUCLEO_L432KC⁩\GCC_ARM\mbedStm32.bin)
