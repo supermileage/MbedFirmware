@@ -1,6 +1,15 @@
 # UBC Supermileage MBED projects
-[Getting Started](#Getting-started)
-[Working With Project Submodules](#Working-With-Project-Submodules)
+A consolidated repo containing all required mbed resources and  mbed-os related projects from the UBC Supermileage team
+## Table of Contents
+* [Getting Started](#Getting-started)
+* [Working With Project Submodules](#Working-With-Project-Submodules)
+  * [Intializing Project Submodules](#Intializing-Project-Submodules)
+  * [Updating Project Submodules](#Updating-Project-Submodules)
+  * [Adding Project Submodules](#Adding-Project-Submodules)
+  * [Pushing Changes Within Submodules](#Pushing-Changes-Within-Submodules)
+* [Notes](#Notes)
+* [Maintainers](#Maintainers)
+
 ## Getting started:
 ### Install Prerequisites
 ##### Windows / MacOSX
@@ -35,9 +44,9 @@ After activating your virtual envrionment, your terminal should look something l
 (mbed-os-env) $
 ```
 ##### Windows
+git clone https://github.com/spennyp/mbedStm32.git
 Clone and enter the repository:
 ```cmd
-git clone https://github.com/spennyp/mbedStm32.git
 cd git
 ```
 Create and activate virtual environment:
@@ -72,8 +81,44 @@ mbed compile --source ./mbed-os --source ./[project directory]
 ```
 drag .bin file into the microcontroller(⁨..\mbedStm32⁩\BUILD⁩\NUCLEO_L432KC⁩\GCC_ARM\mbedStm32.bin)
 
+Compile AND flash *at the same time* with the -f flag!
+```sh
+mbed compile -f --source ./mbed-os --source ./[project directory]
+```
+
 ## Working with project submodules
-#### Adding Projects
+
+#### Intializing Project Submodules
+To initialize a submodudle:
+```sh
+git submodule update --init [project directory]
+```
+For example:
+```sh
+git submodule update --init CAN-Accessories
+```
+Alternatively, leave out the project directory to initialize all available submodules:
+```sh
+git submodule update --init
+```
+
+#### Updating Project Submodules
+To update a submodule:
+```sh
+git submodule update --remote [project directory]
+```
+For example:
+```sh
+git submodule update --remote CAN-Accessories
+```
+Alternatively, leave out the project directory to update all available submodules:
+```sh
+git submodule update --remote
+```
+*Note that this updates the submodules to the HEAD of their remote branches, but does change the reference within this 
+repository. You will need to commit and push from mbed-os repository to update the referenced commit as well.*
+
+#### Adding Project Submodules
 Add a project repo as a submodule:
 ```sh
 git submodule add  -b [branch] [repo URL]
@@ -83,9 +128,9 @@ For example, adding the *main* branch of the *supermileage/CAN-Accessories* Repo
 git submodule add -b main https://github.com/supermileage/CAN-Accessories.git
 ```
 
-#### Updating Projects
+#### Pushing Changes Within Submodules
 Submodules act the same as normal repositories, so simply change your working directory to inside the 
-correct submodule, and push/pull as usual, then update the mbed-os repo as well.
+correct submodule, checkout the correct branch and push/pull as usual, then update the mbed-os repo as well.
 
 For example:
 ```sh
@@ -93,9 +138,20 @@ cd CAN-Accessories
 touch new_file
 git add new_file
 git commit -m "new commit"
+git checkout main
 git push
 cd ..
 git add CAN-Accessories
 git commit -m "Update CAN-Accessories submodule"
 git push
 ```
+
+## Notes
+#### Updating the repository
+Please fork the repo and submit a pull request if you need to update settings in this repo. Feel free to push submodule 
+changes directly to the repository.
+
+## Maintainers
+[@spennyp](https://github.com/spennyp)
+
+[@yoruio](https://github.com/yoruio) :unicorn:
