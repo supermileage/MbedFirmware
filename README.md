@@ -1,5 +1,6 @@
 # UBC Supermileage MBED projects
 [Getting Started](#Getting-started)
+[Working With Project Submodules](#Working-With-Project-Submodules)
 ## Getting started:
 ### Install Prerequisites
 ##### Windows / MacOSX
@@ -67,6 +68,34 @@ python -m pip install -r mbed-os/requirements.txt
 ```
 ### Compiling Code
 ```sh
-$ mbed compile --source ./mbed-os --source ./[project directory]
+mbed compile --source ./mbed-os --source ./[project directory]
 ```
 drag .bin file into the microcontroller(⁨..\mbedStm32⁩\BUILD⁩\NUCLEO_L432KC⁩\GCC_ARM\mbedStm32.bin)
+
+## Working with project submodules
+#### Adding Projects
+Add a project repo as a submodule:
+```sh
+git submodule add  -b [branch] [repo URL]
+```
+For example, adding the *main* branch of the *supermileage/CAN-Accessories* Repo:
+```sh
+git submodule add -b main https://github.com/supermileage/CAN-Accessories.git
+```
+
+#### Updating Projects
+Submodules act the same as normal repositories, so simply change your working directory to inside the 
+correct submodule, and push/pull as usual, then update the mbed-os repo as well.
+
+For example:
+```sh
+cd CAN-Accessories
+touch new_file
+git add new_file
+git commit -m "new commit"
+git push
+cd ..
+git add CAN-Accessories
+git commit -m "Update CAN-Accessories submodule"
+git push
+```
