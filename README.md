@@ -29,8 +29,8 @@ We setup a virtual environment in order to easily access mbed-os and its depende
 ##### Linux / MacOSX
 Clone and enter the repository:
 ```sh
-$ git clone https://github.com/spennyp/mbedStm32.git
-$ cd git
+$ git clone https://github.com/supermileage/mbed-os
+$ cd mbed-os
 ```
 Create and activate virtual environment:
 ```sh
