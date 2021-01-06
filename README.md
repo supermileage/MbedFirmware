@@ -79,12 +79,14 @@ python -m pip install -r mbed-os/requirements.txt
 ```sh
 mbed compile --source ./mbed-os --source ./[project directory]
 ```
-drag .bin file into the microcontroller(⁨..\mbedStm32⁩\BUILD⁩\NUCLEO_L432KC⁩\GCC_ARM\mbedStm32.bin)
+drag .bin file into the microcontroller(⁨..\mbedStm32⁩\BUILD⁩\NUCLEO_L432KC⁩\GCC_ARM\mbed-os.bin)
 
+<!--
 Compile AND flash *at the same time* with the -f flag!
 ```sh
 mbed compile -f --source ./mbed-os --source ./[project directory]
 ```
+-->
 
 ## Working with project submodules
 
