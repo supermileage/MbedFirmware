@@ -29,8 +29,8 @@ We setup a virtual environment in order to easily access mbed-os and its depende
 ##### Linux / MacOSX
 Clone and enter the repository:
 ```sh
-$ git clone https://github.com/supermileage/mbed-os
-$ cd mbed-os
+$ git clone https://github.com/supermileage/mbedStm32
+$ cd mbedStm32
 ```
 Create and activate virtual environment:
 ```sh
@@ -46,8 +46,8 @@ After activating your virtual envrionment, your terminal should look something l
 ##### Windows
 Clone and enter the repository:
 ```cmd
-git clone https://github.com/supermileage/mbed-os
-cd mbed-os
+git clone https://github.com/supermileage/mbedStm32
+cd mbedStm32
 ```
 Create and activate virtual environment:
 ```cmd
@@ -58,7 +58,7 @@ Anytime you need to activate the virtual environment, run the second line from i
 
 After activating your virtual envrionment, your terminal should look something like this (with a different path):
 ```cmd
-(mbed-os-env) c:\Users\supermileage\Documents\mbed-os>
+(mbed-os-env) c:\Users\supermileage\Documents\mbedStm32>
 ```
 ### Installing and deploying Mbed CLI
 *Make sure your virtual environment is activated before continuing!*
@@ -79,7 +79,7 @@ python -m pip install -r mbed-os/requirements.txt
 ```sh
 mbed compile --source ./mbed-os --source ./[project directory]
 ```
-drag .bin file into the microcontroller(⁨..\mbedStm32⁩\BUILD⁩\NUCLEO_L432KC⁩\GCC_ARM\mbed-os.bin)
+drag .bin file into the microcontroller(⁨..\mbedStm32⁩\BUILD⁩\NUCLEO_L432KC⁩\GCC_ARM\mbedStm32.bin)
 
 <!--
 Compile AND flash *at the same time* with the -f flag!
@@ -118,7 +118,7 @@ Alternatively, leave out the project directory to update all available submodule
 git submodule update --remote
 ```
 *Note that this updates the submodules to the HEAD of their remote branches, but does change the reference within this 
-repository. You will need to commit and push from mbed-os repository to update the referenced commit as well.*
+repository. You will need to commit and push from mbedStm32 repository to update the referenced commit as well.*
 
 #### Adding Project Submodules
 Add a project repo as a submodule:
@@ -132,7 +132,7 @@ git submodule add -b main https://github.com/supermileage/CAN-Accessories.git
 
 #### Pushing Changes Within Submodules
 Submodules act the same as normal repositories, so simply change your working directory to inside the 
-correct submodule, checkout the correct branch and push/pull as usual, then update the mbed-os repo as well.
+correct submodule, checkout the correct branch and push/pull as usual, then update the mbedStm32 repo as well.
 
 For example:
 ```sh
