@@ -44,10 +44,10 @@ After activating your virtual envrionment, your terminal should look something l
 (mbed-os-env) $
 ```
 ##### Windows
-git clone https://github.com/spennyp/mbedStm32.git
 Clone and enter the repository:
 ```cmd
-cd git
+git clone https://github.com/supermileage/mbed-os
+cd mbed-os
 ```
 Create and activate virtual environment:
 ```cmd
