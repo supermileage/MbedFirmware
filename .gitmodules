@@ -1,4 +1,0 @@
-[submodule "CAN-Accessories"]
-	path = CAN-Accessories
-	url = https://github.com/supermileage/CAN-Accessories.git
-	branch = main
