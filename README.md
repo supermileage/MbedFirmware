@@ -93,6 +93,10 @@ Alternativly, and more easily, you can use a make command to compile and flash i
 ```sh
 make compile project=<UrbanSteering|UrbanAccessories|Examples>
 ```
+Note: On windows you will need to download GNU make for this to work, the easiest way is to use the package manager [Chocolatatey](https://chocolatey.org/install), and run the command
+```cmd
+choco install make
+```
 See the Makefile for details on how this is handled
 
 ## Working with project submodules
