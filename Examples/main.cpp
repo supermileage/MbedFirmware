@@ -1,5 +1,4 @@
 #include "mbed.h"
-#include "mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L432xC/objects.h"
 
 DigitalOut myled(LED1);
 Serial pc(USBTX, USBRX);

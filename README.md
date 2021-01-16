@@ -75,7 +75,7 @@ Install the required packages if you dont have them
 ```sh
 python -m pip install -r mbed-os/requirements.txt
 ```
-### Compiling Code
+### Compiling Code with Mbed CLI
 ```sh
 mbed compile --source ./mbed-os --source ./[project directory]
 ```
@@ -87,6 +87,13 @@ Compile AND flash *at the same time* with the -f flag!
 mbed compile -f --source ./mbed-os --source ./[project directory]
 ```
 -->
+
+### Compiling and Flashing with Make
+Alternativly, and more easily, you can use a make command to compile and flash in one step:
+```sh
+make compile project=<UrbanSteering|UrbanAccessories|Examples>
+```
+See the Makefile for details on how this is handled
 
 ## Working with project submodules
 
