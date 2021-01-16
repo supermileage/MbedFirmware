@@ -2,3 +2,7 @@
 	path = CAN-Accessories
 	url = https://github.com/supermileage/CAN-Accessories.git
 	branch = main
+[submodule "UrbanSteeringFirmware"]
+	path = UrbanSteeringFirmware
+	url = https://github.com/supermileage/UrbanSteeringFirmware
+	branch = main
