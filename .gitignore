@@ -7,6 +7,5 @@ mbed-os
 mbed_config.h
 mbed_settings.pyc
 GettingStarted.html
-Makefile
 BUILD
 build
