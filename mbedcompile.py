@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/env python
 
 import subprocess
 import os
@@ -23,7 +23,7 @@ def build_cmd(image, srcs=[]):
     return cmd
 
 class Cmd:
-    def __init__(self, image='supermileage/mbed-compiler:latest', name='nucleo', outputDir='.', cow='none', fig=False):
+    def __init__(self, image='ubcsupermileage/mbed-compiler:latest', name='nucleo', outputDir='.', cow='none', fig=False):
         self.cmd = "docker run --rm -it"
         self.sources = []
         self.image = image
@@ -60,7 +60,7 @@ def main():
     parser = argparse.ArgumentParser(description="Compile mbed firmware")
     parser.add_argument('-n', '--name', help="name of output binary", default="nucleo")
     parser.add_argument('-s', '--source', help="directories containing source files",action='append', nargs=1)
-    parser.add_argument('-i', '--image', help="name of docker image to run", default='supermileage/mbed-compiler:latest')
+    parser.add_argument('-i', '--image', help="name of docker image to run", default='ubcsupermileage/mbed-compiler:latest')
     parser.add_argument('-o', '--output', help="directory to place binary after compilation", default=".")
 
     parser.add_argument('-c', '--cow', help=argparse.SUPPRESS, default='none')

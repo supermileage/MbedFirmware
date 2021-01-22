@@ -7,7 +7,7 @@ RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get update && apt-get -y install gawk wget diffstat \
     build-essential chrpath socat libsdl1.2-dev python3.7 tar locales cpio git libncurses5-dev \
     pkg-config curl sudo libncursesw5-dev vim mercurial\
-	scons bzr lib32z1 cowsay python3-pip python3.7-dev 
+	scons bzr lib32z1 cowsay python3-pip python3.7-dev figlet pv
 
 # use python3 for repo
 RUN ln -s /usr/bin/python3.7 /usr/bin/python
@@ -48,7 +48,6 @@ ENV MBEDDIR=${MBEDDIR}/MbedFirmware
 WORKDIR ${MBEDDIR}
 RUN mbed deploy
 RUN python -m pip install -r mbed-os/requirements.txt
-RUN apt install -y figlet pv
 
 # precompile mbed-os so the user can compile less.
 RUN mbed compile --source ./mbed-os; exit 0;
@@ -82,7 +81,6 @@ CMD \
         SRCSTRING="$SRCSTRING --source $src"; \
     done; \
     echo "SRCSTRING: $SRCSTRING"; \
-    echo 'breakpoint 3'; \
     echo "compile $SRCSTRING -N $COMPILENAME"; \
     mbed compile $SRCSTRING -N $COMPILENAME | \
     if [[ "$FIG" == "TRUE" ]]; then \
